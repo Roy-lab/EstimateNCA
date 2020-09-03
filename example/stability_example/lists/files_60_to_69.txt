@@ -1,0 +1,10 @@
+100_randinits_lambda0.010/tfa.60.txt
+100_randinits_lambda0.010/tfa.61.txt
+100_randinits_lambda0.010/tfa.62.txt
+100_randinits_lambda0.010/tfa.63.txt
+100_randinits_lambda0.010/tfa.64.txt
+100_randinits_lambda0.010/tfa.65.txt
+100_randinits_lambda0.010/tfa.66.txt
+100_randinits_lambda0.010/tfa.67.txt
+100_randinits_lambda0.010/tfa.68.txt
+100_randinits_lambda0.010/tfa.69.txt
