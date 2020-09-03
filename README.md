@@ -3,11 +3,11 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 [![Generic badge](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/Roy-lab/EstimateNCA/releases/tag/v1.0.0)
 
-Regularized NCA uses the same framework as original NCA (Liao et al. PNAS 2003), but uses a modified LASSO formulation to incorporate edge confidence from input network.
+Regularized NCA uses the same framework as original NCA ([Liao et al. PNAS 2003](https://doi.org/10.1073/pnas.2136632100)), but uses a modified LASSO formulation to incorporate edge confidence from input network.
 Briefly, NCA uses a two step iterative method, estimates TFA profiles from current network, and then estimate regression coefficients of network from the new TFA, and repeats until convergance.
 In regularized TFA, when estimating regression coefficients, we use a modified LASSO to incorporate edge confidence in order to shrink low confidence interactions from the model.
 
-We add the resulting TFA profiles to our inference method [MERLIN-P](https://github.com/Roy-lab/merlin-p) (Roy et al. PLOS Comput Biol 2013, Siahpirani & Roy NAR 2017) which we call MERLIN-P+TFA.
+We add the resulting TFA profiles to our inference method [MERLIN-P](https://github.com/Roy-lab/merlin-p) ([Roy et al. PLOS Comput Biol 2013](https://doi.org/10.1371/journal.pcbi.1003252), [Siahpirani & Roy NAR 2017](https://doi.org/10.1093/nar/gkw963)) which we call MERLIN-P+TFA.
 
 ![alt text](example/tfa_overview.png "Overview of MERLIN-P+TFA. We start with an expression matrix and an input prior network. TF activity profile is estimated using regularized NCA, and final inferred network in inferred using estimated TFA and the input expression matrix and the prior network.")
 
