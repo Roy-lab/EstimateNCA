@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: Regularized NCA
+description: Estimating TF activity using NCA+LASSO.
+show_downloads: true
