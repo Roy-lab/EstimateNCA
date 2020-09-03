@@ -1,6 +1,7 @@
 ### Regularized NCA for estimating TF activity
 
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![Generic badge](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/Roy-lab/EstimateNCA/releases/tag/v1.0.0)
 
 Regularized NCA uses the same framework as original NCA (Liao et al. PNAS 2003), but uses a modified LASSO formulation to incorporate edge confidence from input network.
 Briefly, NCA uses a two step iterative method, estimates TFA profiles from current network, and then estimate regression coefficients of network from the new TFA, and repeats until convergance.
