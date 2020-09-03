@@ -11,6 +11,21 @@ We add the resulting TFA profiles to our inference method [MERLIN-P](https://git
 
 ![alt text](example/tfa_overview.png "Overview of MERLIN-P+TFA. We start with an expression matrix and an input prior network. TF activity profile is estimated using regularized NCA, and final inferred network in inferred using estimated TFA and the input expression matrix and the prior network.")
 
+### How to use
+
+In order to use the program, you will need:
+
+* a prior network with edge confidence (first column is TF, second column is target gene, third column is confidence, see example under example/in). The edge weights could be between 0 and 1, lower (near 0) means low confidence.
+   * This could be from any source (ChIP, motif, etc.). For mammalian cell lines we have used [PIQ](http://piq.csail.mit.edu/) that can integrate DNase/ATAC with a motif network.
+* a expression matrix (first column is gene names, the rest are expression values, no header, see example under example/in).
+
+You will need to estimate TFA multiple time (rand inits) and take average (see scripts under example/stability_example/). For yeast dataset we had used 10 rand inits, for mammalian data, we used 100 rand inits.
+
+In order to use the estimated TFA profile in network inference process, we add a suffix to TF name so we would be able to concatenate the TFA profile to expression matrix and use bot expression and TFA profile of TFs.
+```
+paste <(cut -f1 tfa.txt |awk '{printf("%s_nca\n",$1)}' ) <(cut -f2- tfa.txt ) > tfa_with_suffix.txt
+```
+
 ### Run
 
 You will need GSL library to compile the code. In order to compile to code, navigate to code directory and make.
