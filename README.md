@@ -26,6 +26,12 @@ In order to use the estimated TFA profile in network inference process, we add a
 paste <(cut -f1 tfa.txt |awk '{printf("%s_nca\n",$1)}' ) <(cut -f2- tfa.txt ) > tfa_with_suffix.txt
 ```
 
+**Make sure to add the TFA regulators (regname_nca) to your regulators list in merlin**
+**If you use MERLIN-P with TFA, you will need to add additional edges to your prior network for TFA regulators:**
+```
+cat prior.txt | awk '{printf("%s\t%s\t%s\n%s_nca\t%s\t%s\n",$1,$2,$3,$1,$2,$3)}' > prior_with_tfa_regs.txt
+```
+
 ### Run
 
 You will need GSL library to compile the code. In order to compile to code, navigate to code directory and make.
